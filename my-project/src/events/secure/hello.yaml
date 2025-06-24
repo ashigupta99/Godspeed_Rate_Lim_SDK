@@ -1,0 +1,13 @@
+http.get./secure/hello:
+  fn: secure.hello
+  authn: true  # JWT required
+  authz: false
+  params:
+    - name: name
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Authenticated Hello

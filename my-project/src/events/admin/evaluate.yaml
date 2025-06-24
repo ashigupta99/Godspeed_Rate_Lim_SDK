@@ -1,0 +1,26 @@
+"http.get./admin/evaluate":
+  fn: admin.evaluateRules.handler
+  authn: false
+  authz: false
+  params:
+    - name: userId
+      in: query
+      required: true
+      schema:
+        type: string
+    - name: orgId
+      in: query
+      required: true
+      schema:
+        type: string
+    - name: service
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      content:
+        application/json:
+          schema:
+            type: object
